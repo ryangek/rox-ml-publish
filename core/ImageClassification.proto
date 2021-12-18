@@ -1,0 +1,20 @@
+﻿syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.rox.Farming";
+option java_outer_classname = "ImageClassificationProto";
+option objc_class_prefix = "IC";
+
+package Farming;
+
+service ImageClassification {
+  rpc PredictImage (ImageRequest) returns (ImageResponse) {}
+}
+
+message ImageRequest {
+  bytes file = 1;
+}
+
+message ImageResponse {
+  string result = 1;
+}
